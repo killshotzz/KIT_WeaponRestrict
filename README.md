@@ -1,4 +1,4 @@
-# Kitsune Lab - Projects
+# Kitsune Lab - Projects 
 
 Welcome to this Kitsune Lab Project!
 
