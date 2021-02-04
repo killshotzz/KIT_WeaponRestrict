@@ -1,4 +1,4 @@
-# Kitsune_Repository_Template
+# Kitsune Lab - Projects
 
 Welcome to this Kitsune Lab Project!
 
