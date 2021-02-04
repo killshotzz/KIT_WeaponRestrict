@@ -1,0 +1,37 @@
+"Kitsune_WeaponRestrict"
+{
+//	 	  ____        _   _                 
+//		  / __ \      | | (_)                
+// 		| |  | |_ __ | |_ _  ___  _ __  ___ 
+// 		| |  | | '_ \| __| |/ _ \| '_ \/ __|
+// 		| |__| | |_) | |_| | (_) | | | \__ \
+// 		 \____/| .__/ \__|_|\___/|_| |_|___/
+//  		      | |                          
+//  		      |_|                          
+//
+//		"all"				"number" 		-> Restrict the given weapon count to {number} in the whole server
+//		"team"				"number"		-> Restrict the given weapon count to {number} per team
+//		"players"			"number"		-> From this weapon one can be purchased in both team after every {number} player ( Example: 1 awp for both team after every 2 player )
+//		"block"				"1"				-> Block the given weapon buy for everyone	
+//
+//		NOTE: You can combine them (see below)
+//
+//		Execution order: block - all - team - players
+//		If you don't want to use one of these just simply don't add it
+
+	"weapon_awp" //Combination example
+    {
+		"team"		"3"		//Three awp can be / team overall
+		"players"	"2"		//Users can buy one of the three after every 2 player
+    }
+	
+	"weapon_scar20"
+	{
+		"block"		"1"
+	}
+	
+	"weapon_g3sg1"
+	{
+		"team"		"2"
+	}
+}

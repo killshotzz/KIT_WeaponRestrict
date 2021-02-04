@@ -1,0 +1,22 @@
+"Phrases"
+{
+	"Blocked_1"
+	{
+		"en"		"The choosen weapon is blocked on this server."
+	}
+	"Blocked_2"
+	{
+		"#format"	"{1:i}"
+		"en"		"The choosen weapon is restricted to {1} for all players."
+	}
+	"Blocked_3"
+	{
+		"#format"	"{1:i}"
+		"en"		"The choosen weapon is restricted to {1}/team."
+	}
+	"Blocked_4"
+	{
+		"#format"	"{1:i}"
+		"en"		"With this player count the choosen weapon is restricted to {1}/team."
+	}
+}
