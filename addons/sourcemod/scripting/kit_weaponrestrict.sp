@@ -39,7 +39,7 @@ public Plugin myinfo =
 	name 		= "Weapon Restrict", 
 	author 		= "Kitsune Lab", 
 	description = "This plugin will help you to restrict weapon count per team or overall", 
-	version 	= "1.0",
+	version 	= "1.1",
 	url			= "https://github.com/Kitsune-Lab/KIT_WeaponRestrict"
 };
 
@@ -213,21 +213,9 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 				g_iKitsune_WeaponCount[iIndex][Kitsune_Team_All]++;
 				g_iKitsune_WeaponCount[iIndex][GetClientTeam(client) - 1]++;
 			}
-			GivePlayerItem(client, cBuffer);
-		}
-		else
-		{
-			if(EMP_StrEquals(weapon, "assaultsuit") || EMP_StrEquals(weapon, "kevlar"))
-				FormatEx(EMP_STRING(cBuffer), "item_%s", weapon);
-			else if(!EMP_StrEquals(weapon, "defuser"))
-				FormatEx(EMP_STRING(cBuffer), "weapon_%s", weapon);
-			else
-				cBuffer = "defuser";
-
-			GivePlayerItem(client, cBuffer);
 		}
 	}
-	return Plugin_Handled;
+	return Plugin_Continue;
 }
 
 /*		   _____ _             _        
@@ -240,8 +228,6 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 
 public void Kitsune_CheckPlayerWeapons(int client)
 {
-	if (!EMP_IsValidClient(client)) return;
-	
 	int iWeaponCount = GetEntPropArraySize(client, Prop_Send, "m_hMyWeapons");
 	
 	char cBuffer[32];
