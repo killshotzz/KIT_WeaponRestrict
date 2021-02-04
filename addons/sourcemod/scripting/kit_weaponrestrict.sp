@@ -163,7 +163,7 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 		{
 			if (Client_HasAdminFlags(client, EMP_Flag_StringToInt(cBuffer)))
 			{
-				//bIsAdmin = true;
+				bIsAdmin = true;
 			}
 		}
 		
