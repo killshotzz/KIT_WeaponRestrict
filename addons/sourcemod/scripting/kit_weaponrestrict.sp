@@ -215,6 +215,17 @@ public Action CS_OnBuyCommand(int client, const char[] weapon)
 			}
 			GivePlayerItem(client, cBuffer);
 		}
+		else
+		{
+			if(EMP_StrEquals(weapon, "assaultsuit") || EMP_StrEquals(weapon, "kevlar"))
+				FormatEx(EMP_STRING(cBuffer), "item_%s", weapon);
+			else if(!EMP_StrEquals(weapon, "defuser"))
+				FormatEx(EMP_STRING(cBuffer), "weapon_%s", weapon);
+			else
+				cBuffer = "defuser";
+
+			GivePlayerItem(client, cBuffer);
+		}
 	}
 	return Plugin_Handled;
 }
