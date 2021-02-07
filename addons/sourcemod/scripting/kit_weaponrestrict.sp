@@ -143,7 +143,7 @@ public Action Restrict_RoundEnd(Event event, const char[] name, bool dontBroadca
 	{
 		for (int a = 0; a < sizeof(g_cKitsune_WeaponList); a++)
 		{
-			for (int b = 0; b < Kitsune_Team_CT; b++)
+			for (int b = 0; b < Kitsune_Team_CT + 1; b++)
 			{
 				g_iKitsune_WeaponCount[a][b] = 0;
 			}
