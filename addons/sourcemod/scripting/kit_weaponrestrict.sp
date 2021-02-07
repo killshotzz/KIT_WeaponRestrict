@@ -39,7 +39,7 @@ public Plugin myinfo =
 	name 		= "Weapon Restrict", 
 	author 		= "Kitsune Lab", 
 	description = "This plugin will help you to restrict weapon count per team or overall", 
-	version 	= "1.1",
+	version 	= "1.2",
 	url			= "https://github.com/Kitsune-Lab/KIT_WeaponRestrict"
 };
 
@@ -92,15 +92,14 @@ int			g_iKitsune_WeaponCount[sizeof(g_cKitsune_WeaponList)][3];
 
 public void OnPluginStart()
 {
-	EMP_DirExistsEx("cfg/Kitsune");
-	
 	LoadTranslations("kit_weaponrestrict.phrases");
 	
-	AutoExecConfig_SetFile("WeaponRestrict", "Kitsune");
+	AutoExecConfig_SetCreateDirectory(true);
 	AutoExecConfig_SetCreateFile(true);
+	AutoExecConfig_SetFile("WeaponRestrict", "Kitsune");
 	
 	gConVar_Kitsune_WeaponRestrict_Enabled	= AutoExecConfig_CreateConVar("kit_weapon_restrict_enabled", 			"1" ,													"Enable or Disable the plugin", 0, true, 0.0, true, 1.0);
-	gConVar_Kitsune_WeaponRestrict_Prefix 	= AutoExecConfig_CreateConVar("kit_weapon_restrict_prefix", 			"{default}[{lightred}Kitsune{default} ]{lime}", 		"Modify the plugin's chat prefix");
+	gConVar_Kitsune_WeaponRestrict_Prefix 	= AutoExecConfig_CreateConVar("kit_weapon_restrict_prefix", 			"{default}[{lightred}Kitsune{default}]{lime}", 			 "Modify the plugin's chat prefix");
 	gConVar_Kitsune_WeaponRestrict_Bypass 	= AutoExecConfig_CreateConVar("kit_weapon_restrict_bypass", 			"z", 													"This flag can bypass weapon restrictions (leave empty for none)");
 
 	AutoExecConfig_ExecuteFile();
@@ -154,7 +153,7 @@ public Action Restrict_RoundEnd(Event event, const char[] name, bool dontBroadca
 
 public Action CS_OnBuyCommand(int client, const char[] weapon)
 {
-	if (EMP_IsValidClient(client) && gConVar_Kitsune_WeaponRestrict_Enabled.BoolValue)
+	if (!EMP_IsWarmUpPeriod() && EMP_IsValidClient(client) && gConVar_Kitsune_WeaponRestrict_Enabled.BoolValue)
 	{
 		bool bIsAdmin = false;
 		char cBuffer[32];
