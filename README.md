@@ -19,3 +19,5 @@ If you are beginner user in server configuration then here is our installation g
 2. If the plugin has a Database connection open the database cfg inside your sourcemod/configs/ folder and add (if not exists already) a new entry with the name of "kitsune")
 3. Change the map to something else
 (Some of our plugin use extensions. That means a map change won't load the plugin correctly so you have to restart the server to load the extension too.)
+
+# If you want to use this Emulator with a plugin you should simply replace the include from <store> to <store_emu>
