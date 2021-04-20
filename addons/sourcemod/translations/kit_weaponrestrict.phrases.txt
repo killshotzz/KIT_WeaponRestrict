@@ -3,20 +3,24 @@
 	"Blocked_1"
 	{
 		"en"		"The choosen weapon is blocked on this server."
+		"da"		"Det valgte våben er blokeret på denne server."
 	}
 	"Blocked_2"
 	{
 		"#format"	"{1:i}"
 		"en"		"The choosen weapon is restricted to {1} for all players."
+		"da"		"Det valgte våben er begrænset til {1} for alle spillere."
 	}
 	"Blocked_3"
 	{
 		"#format"	"{1:i}"
 		"en"		"The choosen weapon is restricted to {1}/team."
+		"da"		"Det valgte våben er begrænset til {1}/hold."
 	}
 	"Blocked_4"
 	{
 		"#format"	"{1:i}"
 		"en"		"With this player count the choosen weapon is restricted to {1}/team."
+		"da"		"Med denne spiller mængde er det valgte våben begrænset til {1}/hold."
 	}
 }
